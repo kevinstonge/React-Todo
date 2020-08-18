@@ -1,0 +1,27 @@
+@import "base";
+.inputContainer {
+  width: 100%;
+  @include contentBox();
+  input {
+    margin: 0 0.5rem;
+    color: $fg2;
+    background-color: $bg2;
+    border: 1px solid $bg1;
+  }
+  button {
+    background: linear-gradient(to top, $bg2, $bg3);
+    color: $fg3;
+    border: 1px solid $fg1;
+    padding: 0 0.5rem;
+    border-radius: 0.5rem;
+    &:hover {
+      background: linear-gradient(to top, $em1, $em2);
+      color: $bg1;
+      cursor: pointer;
+    }
+    &:active {
+      background: linear-gradient(to top, $em1, $em1);
+      color: $bg1;
+    }
+  }
+}

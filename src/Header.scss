@@ -1,0 +1,18 @@
+@import "base";
+#toDoHeader {
+  // background-color: $bg2;
+  background: linear-gradient(to bottom, $bg3, $bg1);
+  color: $em1;
+  @include flexR();
+  justify-content: space-between;
+  h1 {
+    padding: 1rem;
+  }
+  .toDoCount {
+    padding: 1rem;
+    .toDoCountNumber {
+      font-weight: bold;
+      color: $em2;
+    }
+  }
+}

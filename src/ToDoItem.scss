@@ -1,0 +1,27 @@
+@import "base";
+.toDoItemContainer {
+  width: 100%;
+  @include contentBox();
+  @include flexR();
+  justify-content: space-between;
+  margin-top: 1rem;
+  .deleteButton {
+    background: linear-gradient(to top, $bg2, $bg3);
+    color: $fg3;
+    border: 1px solid $fg1;
+    padding: 0 0.5rem;
+    border-radius: 0.5rem;
+    &:hover {
+      background: linear-gradient(to top, #111, $em3);
+      color: $fg2;
+      cursor: pointer;
+    }
+  }
+  input,
+  label {
+    cursor: pointer;
+  }
+  input[type="checkbox"] {
+    color: red;
+  }
+}
