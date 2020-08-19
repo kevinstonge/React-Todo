@@ -50,6 +50,14 @@ class App extends React.Component {
       </>
     );
   }
+  componentDidUpdate() {
+    localStorage.setItem("toDos", JSON.stringify(this.state));
+  }
+  componentDidMount() {
+    if (this.state.toDos.length === 0 && localStorage.getItem("toDos")) {
+      this.setState(JSON.parse(localStorage.getItem("toDos")));
+    }
+  }
 }
 
 export default App;
