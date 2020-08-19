@@ -31,7 +31,8 @@ class App extends React.Component {
       }),
     });
   };
-  deleteToDo = (id) => {
+  deleteToDo = (e, id) => {
+    e.stopPropagation();
     this.setState({ toDos: this.state.toDos.filter((todo) => todo.id !== id) });
   };
   render() {

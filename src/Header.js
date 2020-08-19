@@ -7,7 +7,8 @@ class Header extends React.Component {
     this.state = null;
   }
   render() {
-    const count = this.props.toDos.length;
+    const toDos = this.props.toDos;
+    const count = toDos.filter((t) => !t.completed).length;
     return (
       <header id="toDoHeader">
         <div>

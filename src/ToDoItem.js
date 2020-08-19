@@ -1,5 +1,7 @@
 import React from "react";
 import "./ToDoItem.scss";
+import Arrow from "./Arrow";
+import Check from "./Check";
 class ToDoItem extends React.Component {
   constructor(props) {
     super(props);
@@ -9,19 +11,19 @@ class ToDoItem extends React.Component {
     //checked: ❌✅✔️
     const { task, id, completed } = this.props.toDo;
     return (
-      <div className="toDoItemContainer">
-        <label htmlFor={`toDoItem-${id}`}>
-          <input
-            type="checkbox"
-            id={`toDoItem-${id}`}
-            checked={completed}
-            onChange={() => this.props.toggleCompleted(id)}
-          />
+      <div
+        className={`toDoItemContainer ${
+          completed ? "completeToDo" : "incompleteToDo"
+        }`}
+        onClick={() => this.props.toggleCompleted(id)}
+      >
+        <span className="toDoInfo">
+          {completed ? <Check /> : <Arrow />}
           {task}
-        </label>
+        </span>
         <button
           className="deleteButton"
-          onClick={() => this.props.deleteToDo(id)}
+          onClick={(e) => this.props.deleteToDo(e, id)}
         >
           delete
         </button>

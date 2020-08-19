@@ -1,0 +1,12 @@
+@import "base";
+.check {
+  width: 2rem;
+  min-width: 2rem;
+  margin-right: 0.5rem;
+  .light {
+    fill: $em1;
+  }
+  .dark {
+    fill: darken($em1, 50);
+  }
+}
