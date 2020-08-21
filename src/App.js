@@ -3,7 +3,7 @@ import Header from "./Header";
 import Input from "./Input";
 import ToDoList from "./ToDoList";
 import "./App.scss";
-
+//TODO: clear completed button, search feature
 class App extends React.Component {
   constructor() {
     super();
