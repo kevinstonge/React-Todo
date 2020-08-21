@@ -3,7 +3,6 @@ import Header from "./Header";
 import Input from "./Input";
 import ToDoList from "./ToDoList";
 import "./App.scss";
-//TODO: clear completed button, search feature
 class App extends React.Component {
   constructor() {
     super();
@@ -35,6 +34,11 @@ class App extends React.Component {
     e.stopPropagation();
     this.setState({ toDos: this.state.toDos.filter((todo) => todo.id !== id) });
   };
+  clearCompleted = () => {
+    this.setState({
+      toDos: this.state.toDos.filter((todo) => !todo.completed),
+    });
+  };
   render() {
     return (
       <>
@@ -45,6 +49,7 @@ class App extends React.Component {
             toDos={this.state.toDos}
             toggleCompleted={this.toggleCompleted}
             deleteToDo={this.deleteToDo}
+            clearCompleted={this.clearCompleted}
           />
         </div>
       </>
