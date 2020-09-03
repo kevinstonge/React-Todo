@@ -1,0 +1,13 @@
+@import "base";
+.arrow {
+  width: 2rem;
+  min-width: 2rem;
+  margin-right: 0.5rem;
+  .dark {
+    fill: darken($em2, 50);
+    stroke: "none";
+  }
+  .light {
+    fill: $em2;
+  }
+}

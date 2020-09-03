@@ -1,0 +1,29 @@
+$bg1: #222;
+$bg2: #333;
+$bg3: #444;
+$fg1: #ccc;
+$fg2: #ddd;
+$fg3: #eee;
+$em1: #aea;
+$em2: #e6f;
+$em3: #e66;
+$em4: #aae;
+@mixin flexC() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+@mixin flexR() {
+  @include flexC();
+  flex-direction: row;
+}
+
+@mixin contentBox() {
+  @include flexR();
+  padding: 1rem;
+  background: linear-gradient(to top, $bg1, $bg2);
+  box-shadow: 0 0.4rem 0.4rem 0.1rem #151515;
+}

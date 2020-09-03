@@ -1,0 +1,58 @@
+@import "base";
+@mixin completeBox() {
+  background: linear-gradient(
+    to top,
+    $bg1 0%,
+    $bg2 85%,
+    transparentize($em1, 0.5) 98%,
+    $em1
+  );
+}
+@mixin incompleteBox() {
+  background: linear-gradient(
+    to top,
+    $bg1 0%,
+    $bg2 85%,
+    transparentize($em2, 0.5) 98%,
+    $em2
+  );
+}
+.toDoItemContainer {
+  width: 100%;
+  @include flexR();
+  justify-content: space-between;
+  .toDoInfo {
+    @include flexR();
+  }
+  @include contentBox();
+  &.incompleteToDo {
+    @include incompleteBox();
+    &:hover {
+      @include completeBox();
+    }
+  }
+  &.completeToDo {
+    @include completeBox();
+    &:hover {
+      @include incompleteBox();
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  @include flexR();
+  justify-content: space-between;
+  margin-top: 1rem;
+  .deleteButton {
+    background: linear-gradient(to top, $bg2, $bg3);
+    color: $fg3;
+    border: 1px solid $fg1;
+    padding: 0 0.5rem;
+    border-radius: 0.5rem;
+    &:hover {
+      background: linear-gradient(to top, #111, $em3);
+      color: $fg2;
+      cursor: pointer;
+    }
+  }
+}

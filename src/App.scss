@@ -1,0 +1,12 @@
+@import "base";
+html {
+  background-color: $bg1;
+  color: $fg1;
+}
+#toDoBody {
+  padding-top: 0.5rem;
+  @include flexC();
+  margin: 0 auto;
+  width: 70vw;
+  max-width: 40rem;
+}
